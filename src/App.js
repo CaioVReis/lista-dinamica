@@ -47,22 +47,19 @@ setTasks(tasks)
  
 
   return (
-    <div className="w-screen h-screen flex justify-center   mt-5"
-    
-    style={{ 
-      backgroundImage: `url("")` 
-    }} >
+   
+    <div className=" backgroud w-full h-full flex justify-center     mt-5">
       
-      <div className="border-4 border-solid rounded  bg-opacity-25  h-screen w-2/5 " >
+      <div className=" border border-black rounded m-2 bg-white bg-opacity-60 h-screen w-2/5 " >
         
         <div className="mt-5">
-          <div className="m-2  flex ml-6 "><ImputL name="adicionar" onInput={(ev) =>setTask(ev.target.value)} onEnter={() => addTask(task)}/>
+          <div className="m-2  flex ml-6 opacity-90 "><ImputL name="adicionar" onInput={(ev) =>setTask(ev.target.value)} onEnter={() => addTask(task)}/>
             <div className="flex">
               <div className="ml-20">
                 <AddButton onClick={ () => addTask(task)}/>
              </div>
 
-              <div className="-mt-2 ml-44">
+              <div className="-mt-2 ml-40">
                 <RemoveButtons onClick={removeTask}/>
               </div>
              </div>
@@ -76,7 +73,7 @@ setTasks(tasks)
            
             
             <div className="mt-3  m-2 h-5/6 " >
-                <div className=" bg-white    w-11/12 " >
+                <div className="   w-11/12 " >
           
        { tasks.map((t, index )=> (
           <div key={index} className={`flex flex-row  w-full  rounded h-16 m-5 ${t.cheked ? "text-green-900 bg-green-200 shadow-lg ":"text-black bg-white"}`}>
@@ -107,6 +104,7 @@ setTasks(tasks)
         
       </div>
     </div>
+    
   )}
     
 
