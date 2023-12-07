@@ -17,9 +17,9 @@ const RemoveButtons = ({onClick}) =>{
     )
 }
 
-const ChekedButton = ({onClick}) =>{
+const ChekedButton = ({onClick,}) =>{
     return(
-        <button className="-mt-2"onClick={onClick} >          
+        <button className="-mt-2"   onClick={onClick} >          
             <Icon icon="Feito"/>
         </button>
     )

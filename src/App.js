@@ -38,44 +38,50 @@ setTasks(tasks)
       if (i === index) item.cheked = true;
       return item
     })
-    setTasks(res) // coloca as tasks no state novamente
+    setTasks(res) 
 
     
   }
 
+  
  
 
   return (
-    <div className="w-screen h-screen flex justify-center mt-5"
+    <div className="w-screen h-screen flex justify-center   mt-5"
     
     style={{ 
-      backgroundImage: `url("https://i.pinimg.com/originals/fc/dc/08/fcdc08e6be809dc348d4e4c27c720490.jpg")` 
+      backgroundImage: `url("")` 
     }} >
       
-      <div className="border-4 border-solid rounded bg-slate-50 border-green h-screen " >
+      <div className="border-4 border-solid rounded  bg-opacity-25  h-screen w-2/5 " >
         
-        <div className="mt-10">
-          <div className="m-2  flex ml-10 "><ImputL name="Adicionar" onInput={(ev) => setTask(ev.target.value)}/>
-              <div className="ml-24 flex">
+        <div className="mt-5">
+          <div className="m-2  flex ml-6 "><ImputL name="adicionar" onInput={(ev) =>setTask(ev.target.value)} onEnter={() => addTask(task)}/>
+            <div className="flex">
+              <div className="ml-20">
                 <AddButton onClick={ () => addTask(task)}/>
              </div>
 
-              <div className="ml-20">
+              <div className="-mt-2 ml-44">
                 <RemoveButtons onClick={removeTask}/>
+              </div>
              </div>
+            
 
           </div> 
         </div>
+
+       
             
            
             
-            <div className="border-4 mt-3 border-black m-2 h-5/6 " >
-                <div className=" bg-white bg-    w-11/12 " >
+            <div className="mt-3  m-2 h-5/6 " >
+                <div className=" bg-white    w-11/12 " >
           
        { tasks.map((t, index )=> (
-          <div key={index} className={`flex flex-row  w-full border border-black rounded h-16 m-5 ${t.cheked ? "text-green-900 bg-green-200 ":"text-black bg-white"}`}>
+          <div key={index} className={`flex flex-row  w-full  rounded h-16 m-5 ${t.cheked ? "text-green-900 bg-green-200 shadow-lg ":"text-black bg-white"}`}>
 
-                  <div className=" w-1/5 flex justify-center  mt-2">
+                  <div className=" w-1/5 flex justify-center animate-pulse  mt-2">
                   <ChekedButton onClick={()=>isCheked(index)}/>
                   </div>
 
