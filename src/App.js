@@ -52,7 +52,7 @@ setTasks(tasks)
       backgroundImage: `url("https://i.pinimg.com/originals/fc/dc/08/fcdc08e6be809dc348d4e4c27c720490.jpg")` 
     }} >
       
-      <div className="border-4 border-solid rounded bg-slate-50 border-black h-screen w-1/3" >
+      <div className="border-4 border-solid rounded bg-slate-50 border-green h-screen " >
         
         <div className="mt-10">
           <div className="m-2  flex ml-10 "><ImputL name="Adicionar" onInput={(ev) => setTask(ev.target.value)}/>
