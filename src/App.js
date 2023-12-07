@@ -35,7 +35,7 @@ setTasks(tasks)
 
   const isCheked = ( index ) =>{
     const res = tasks.map((item, i ) =>{
-      if (i === index) item.cheked = true;
+      if (i === index) item.cheked = !item.cheked;
       return item
     })
     setTasks(res) 
