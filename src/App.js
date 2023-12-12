@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import ImputL from "./components/input";
 import AddButton, { RemoveButtons,ChekedButton,TrashButton } from "./components/buttons";
+import ToDay from "./components/toDay";
+
 
 
 function App() {
@@ -43,10 +45,13 @@ setTasks(tasks)
     
   }
 
+
+
   
  
 
   return (
+    
    
     <div className=" backgroud w-full h-full flex justify-center     mt-5">
       
@@ -86,6 +91,7 @@ setTasks(tasks)
                     {t.name}
                   </div>
 
+                  <div className="mt-5 font-bold text-sm"><ToDay/></div>
                   <div className=" w-1/5 flex justify-center mt-2 ">
                   <TrashButton onClick={() => remove(index)}/>
                  
