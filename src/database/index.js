@@ -45,7 +45,7 @@ const Remove = (id) =>{
     return itens
 }
 
-const Update = (data) =>{
+const Update = (data) =>{ 
     const dateSave = JSON.stringify(data) // conventendo Para strings
     localStorage.setItem(dataBase,dateSave)
 }
