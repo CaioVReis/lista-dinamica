@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import ImputL from "./components/input";
 import AddButton, { RemoveButtons,ChekedButton,TrashButton } from "./components/buttons";
 import ToDay from "./components/toDay";
+import { List , Save , Remove , Update } from "./database";
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -13,42 +15,61 @@ function App() {
  
 
   useEffect(()=>{
-setTasks(tasks)
-  },[tasks])
+    if (List().length > 0){
+      console.log("Pegando dados da database",List())
+      setTasks(List())
+    }
+ 
+  },[])
+
+  
   
 
   const addTask= (name) => {
-   
-    setTasks([...tasks,{
 
-      name: name
-    }])
+    const _data = {
+      id: uuidv4(),
+      cheked:false,
+      name: name,
+      data: Date.now().toLocaleString("pt-br")
+    }
+   
+    setTasks([...tasks,_data])
+    Save(_data) //Grava no local (localstorage)
+
+      
+    
   }
 
   const removeTask = () => {
     const newTasks = tasks.slice(0, -1);
+    Update(newTasks)
     setTasks(newTasks);
   }
 
-  const remove =(index) =>{
-    const res = tasks.filter((v,i) => i!==index)
+  const remove =(id) =>{
+    const res = Remove(id)
     setTasks(res)
   }
 
-  const isCheked = ( index ) =>{
-    const res = tasks.map((item, i ) =>{
-      if (i === index) item.cheked = !item.cheked;
+  const isCheked = ( id ) =>{
+    const res = tasks.map(item =>{
+      if (item.id === id) item.cheked = !item.cheked;
       return item
     })
     setTasks(res) 
-
+    Update(res)
     
   }
 
 
 
   
- 
+  // CRUD
+  // Create
+  //Read
+  //Update
+  //Delete
 
   return (
     
@@ -84,7 +105,7 @@ setTasks(tasks)
           <div key={index} className={`flex flex-row  w-full  rounded h-16 m-5 ${t.cheked ? "text-green-900 bg-green-200 shadow-lg ":"text-black bg-white"}`}>
 
                   <div className=" w-1/5 flex justify-center animate-pulse  mt-2">
-                  <ChekedButton onClick={()=>isCheked(index)}/>
+                  <ChekedButton onClick={()=>isCheked(t.id)}/>
                   </div>
 
                   <div className=" text-center font-bold mt-4  w-96">
@@ -93,7 +114,7 @@ setTasks(tasks)
 
                   <div className="mt-5 font-bold text-sm"><ToDay/></div>
                   <div className=" w-1/5 flex justify-center mt-2 ">
-                  <TrashButton onClick={() => remove(index)}/>
+                  <TrashButton onClick={() => remove(t.id)}/>
                  
                   </div>
             </div>
