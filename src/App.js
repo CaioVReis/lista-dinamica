@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import './App.css';
 import ImputL from "./components/input";
 import AddButton, { RemoveButtons,ChekedButton,TrashButton } from "./components/buttons";
 import ToDay from "./components/toDay";
