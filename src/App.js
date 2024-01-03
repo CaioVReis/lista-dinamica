@@ -26,6 +26,9 @@ function App() {
   
 
   const addTask= (name) => {
+    if(tasks.length>5){
+      return
+    }
 
     const _data = {
       id: uuidv4(),
