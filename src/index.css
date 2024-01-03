@@ -4,10 +4,11 @@
 
 body { overflow-x: hidden; 
 }
+
 .backgroud{
     
     background-repeat: no-repeat;
-    background-image: url("https://s2.best-wallpaper.net/wallpaper/3840x2160/2202/Mountains-green-trees-lake-nature-landscape_3840x2160.jpg");
+    background-image: url("../public/img/Mountains-green-trees-lake-nature-landscape_3840x2160.jpg");
     background-size: 100% 100%;
     
     
