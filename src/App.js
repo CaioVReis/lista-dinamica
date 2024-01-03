@@ -74,7 +74,7 @@ function App() {
   return (
     
    
-    <div className=" backgroud w-full h-full flex justify-center     mt-5">
+    <div className=" backgroud w-full h-full flex justify-center  ">
       
       <div className=" border border-black rounded m-2 bg-white bg-opacity-60 h-screen w-2/5 " >
         
